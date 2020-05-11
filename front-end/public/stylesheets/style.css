@@ -1,0 +1,56 @@
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+
+/* fix image of table data */
+
+table.dataTable tbody td img {
+    max-height: 150px;
+}
+
+.footer-style {
+    background-color: lightpink;
+}
+.card {
+    margin: 0px;
+}
+.center-cropped {
+    width: 1080px;
+    height: 506px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.percent {
+    margin-left: 8px;
+    color: rgb(120, 120, 120);
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+.original {
+    display: block;
+    margin-left: 0px;
+    color: rgb(120, 120, 120);
+    font-size: 13px;
+    font-weight: 300;
+    text-decoration: line-through;
+}
+.price {
+    align-self: stretch;
+    color: rgb(36, 36, 36);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0px;
+}
+/* .card-des {
+    height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+} */

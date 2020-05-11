@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Update product information</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <%- include ./components/bootstrap.ejs %>
+</head>
+
+<body>
+    <%- include('./components/navAdmin.ejs') %>
+        <% if (productId) { %>
+        <div class="productNeedUpdate" id="<%= productId %>"> </div>
+            <% } %>
+    <div class="container" style="margin-top: 75px">
+        <div class="row ">
+            <div class="col-md-6 offset-md-3">
+                <h3>Update product</h3>
+                <div id="createProductInf"></div>
+                <div id="productForm">
+                    <div id="loadingProduct"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            checkAdminIsSignIn();
+            const htmlButtonLoading =  `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>`;
+            $("#loadingProduct").html(htmlButtonLoading);
+            const productId = $('.productNeedUpdate').attr("id");
+            getProductById(productId, (err, data) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    $("#loadingProduct").html('');
+                    const {
+                        des,
+                        image_url,
+                        name,
+                        price,
+                        sale
+                    } = data.data.Item;
+                    const productForm = `
+                    <form>
+                        <div class="form-group">
+                            <label for="">Name<span style="color: red"> *</span></label>
+                            <input id="name" type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Price<span style="color: red"> *</span></label>
+                                    <input id="price" type="number" class="form-control" placeholder="Price">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Sale<span style="color: red"> *</span></label>
+                                    <input id="sale" type="number" class="form-control" placeholder="Sale">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Image<span style="color: red"> *</span></label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="image" aria-describedby="image">
+                                    <label class="custom-file-label" for="image">Choose file</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" id="image-button">
+                                        <span id="uploading"></span>
+                                        Upload</button>
+                                </div>
+                            </div>
+                            <div>
+                                <input id="image-url" type="text" class="form-control" placeholder="Image Url" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Description<span style="color: red"> *</span></label>
+                            <textarea id="des" class="form-control"  rows="5" placeholder="Description"></textarea>
+                        </div>
+                    </form>
+                    <button id="updateForm" class="col-md-12 btn btn-primary">
+                        <span id="updating"></span>
+                        Update Product
+                        </button>
+                    `;
+                    $('#productForm').html(productForm);
+                    $('#des').val(des);
+                    $('#image-url').val(image_url);
+                    $('#name').val(name);
+                    $('#price').val(price);
+                    $('#sale').val(sale);
+                        
+                    $('#updateForm').click(() => {
+                        const productId = $('.productNeedUpdate').attr("id");
+                        $("#createProductInf").html('');
+                        const des = $('#des').val();
+                        if (!des) {
+                            var htmlErr = `<div class="alert alert-warning" role="alert">
+                                Description must be filled out!
+                        </div>`
+                            $("#createProductInf").html(htmlErr);
+                            return;
+                        }
+                        const image_url = $('#image-url').val();
+                        if (!image_url) {
+                            var htmlErr = `<div class="alert alert-warning" role="alert">
+                                Image must be filled out!
+                            </div>`
+                            $("#createProductInf").html(htmlErr);
+                            return;
+                        }
+                        const name = $('#name').val();
+                        if (!name) {
+                            var htmlErr = `<div class="alert alert-warning" role="alert">
+                                Name must be filled out!
+                            </div>`
+                            $("#createProductInf").html(htmlErr);
+                            return;
+                        }
+                        const price = $('#price').val();
+                        if (!price) {
+                            var htmlErr = `<div class="alert alert-warning" role="alert">
+                                Price must be filled out!
+                            </div>`
+                            $("#createProductInf").html(htmlErr);
+                            return;
+                        }
+                        const sale = $('#sale').val();
+                        if (!sale || sale < 0 || sale > 100 ) {
+                            var htmlErr = `<div class="alert alert-warning" role="alert">
+                                Sale must be filled out!
+                            </div>`
+                            $("#createProductInf").html(htmlErr);
+                            return;
+                        }
+                        if (!name) {
+                            var htmlErr = `<div class="alert alert-warning" role="alert">
+                                Name must be filled out!
+                            </div>`
+                            $("#createProductInf").html(htmlErr);
+                            return;
+                        }
+                        const data = {
+                            productId,
+                            des,
+                            image_url,
+                            name,
+                            price,
+                            sale
+                        };
+                        const htmlButtonLoading =  `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>`;
+                        $("#updating").html(htmlButtonLoading);
+                        updateProduct(data, (err, data) => {
+                            $("#updating").html('');
+                            if (err) {
+                                var htmlErr = `<div class="alert alert-warning" role="alert">
+                                    ${err}
+                                </div>`
+                                $("#createProductInf").html(htmlErr);
+                            } else {
+                                var htmlErr = `<div class="alert alert-success" role="alert">
+                                    Update product successfull
+                                </div>`
+                                $("#createProductInf").html(htmlErr);
+                            }
+                        })
+                    })
+                    $('#image-button').click(() => {
+                        const file = $('#image')[0].files[0];
+                        if (!file){
+                            var htmlErr = `<div class="alert alert-warning" role="alert">
+                                             Please select file!
+                                         </div>`
+                            $("#createProductInf").html(htmlErr);
+                            return
+                        }
+                        const htmlButtonLoading =  `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>`;
+                        $("#uploading").html(htmlButtonLoading);
+                        toBase64(file, (err, fileEncoded) => {
+                            uploadImage({
+                                base64String: fileEncoded
+                            }, (err, data) => {
+                                $("#uploading").html('');
+                                if (err) {
+                                    var htmlErr = `<div class="alert alert-success" role="alert">
+                                        Upload Image failure ! Please try again.
+                                    </div>`
+                                    $("#createProductInf").html(htmlErr);
+                                } else {
+                                    const url = data.data.url;
+                                    $('#image-url').val(url);
+                                }
+                            });
+                        });
+                    });
+                }
+            })
+        });
+    </script>
+    <%- include ./components/footerAdmin.ejs%>
+</body>
+
+</html>

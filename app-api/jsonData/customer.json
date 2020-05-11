@@ -1,0 +1,20 @@
+[
+	{
+		"email": "guess1@gmail.com",
+		"password": "123456",
+		"phone": "09111111",
+		"address": "702 Nguyen Van Linh"
+	},
+	{
+		"email": "guess2@gmail.com",
+		"password": "123456",
+		"phone": "092222222",
+		"address": "208 Nguyen Van Linh"
+    },
+    {
+		"email": "guess3@gmail.com",
+		"password": "123456",
+		"phone": "093333333",
+		"address": "500 Nguyen Van Linh"
+    } 
+]

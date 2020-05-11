@@ -1,0 +1,65 @@
+[
+	{
+		"name": "ROMANCE",
+    	"des": "Eternally iconic and elegant, red roses still stand out as the ultimate symbol of romance. If you're looking to sweep someone off their feet, this Bouq still has a perfect record. Want our advice? Don't be afraid to dive in head first. Our flowers are grown on eco-friendly, sustainable farms and freshly cut",
+    	"image_url": "https://alice-shop-image.s3.amazonaws.com/images/romance.jpg",
+    	"price": 400000,
+    	"sale": 0
+	},
+	{
+		"name":  "42ND STREET",
+    	"des": "An elegant, but striking mix of Deep Water’ and ‘Miss Piggy’ roses with fragrant rosemary and pittosporum foliages . This is a striking bouquet of flowers that is sure to please and will undoubtedly overwhelm any lucky recipient of them. It is a perfect happy birthday, new baby girl, or even a just because bouquet of flowers that never fails to impress.",
+    	"image_url": "https://alice-shop-image.s3.amazonaws.com/images/DNStreet.jpg",
+    	"price": 500000,
+    	"sale": 10
+    },
+    {
+		"name":  "APPIAN WAY",
+    	"des": "If you’re new to Ivvo’s work, this bouquet of flowers is a great introduction to this rising star of floral design. Here he has used orange asclepias, hypericum berries, daisies, green viburnum and burnt orange roses to create a fabulously happy flower bouquet",
+    	"image_url": "https://alice-shop-image.s3.amazonaws.com/images/appian.jpg",
+    	"price": 350000,
+    	"sale": 20
+    },
+    {
+		"name":  "FIFTH AVENUE",
+    	"des": "When it comes to luxury shopping, it just doesn’t get better than Fifth Avenue. In trying to emulate such opulence, our wonderful head designer has come up with a more elegant design in the shape of a dome of some the finest roses the world has to offer. These include the ever fragrant and wonderful ‘All for Love’, ‘Red Naomi’ and ‘Vendella’ luxury roses",
+    	"image_url": "https://alice-shop-image.s3.amazonaws.com/images/fifth.jpg",
+    	"price": 800000,
+    	"sale": 10
+    },
+    {
+		"name":  "LOVERS LANE",
+    	"des": "A classic bouquet of the most sumptuous ‘sweet avalanche’ roses available. Designed in a contemporary dome shape with absolutely no other flowers or foliages within it, the hand tied bouquet takes inspiration from many bridal bouquets our team has designed over the years",
+    	"image_url": "https://alice-shop-image.s3.amazonaws.com/images/love.jpg",
+    	"price": 450000,
+    	"sale": 10
+    },
+    {
+		"name":  "PRIMROSE",
+    	"des": "A dome like no other one might say. Nestled beautifully on a hand made clear glass fishbowl is the collection of some of the most stunning ‘sweet avalanche’ roses available. A designer touch is brought to the arrangement by our florists who have added hosta leafs and a stem of hydrangea to the bottom of it, for a quirky finishing touch to it all",
+    	"image_url": "https://alice-shop-image.s3.amazonaws.com/images/prime.jpg",
+    	"price": 700000,
+    	"sale": 10
+    },
+    {
+		"name":  "MELROSE PLACE",
+    	"des": "A birthday flower bouquet in a vase, designed with the very best flowers and foliages available that include ‘Red Naomi’ roses, blue nigellas, red hypericums, orange asclepias, green dill, bombastic spray roses and amazing guilder roses. The bouquet comes in a hand made clear glass vase and is sure to inspire and adorn any house beautifully",
+    	"image_url": "https://alice-shop-image.s3.amazonaws.com/images/place.jpg",
+    	"price": 600000,
+    	"sale": 50
+    },
+    {
+		"name":  "NEWBURY",
+    	"des": "The hand tied bouquet includes ocean song roses, pale pink dahlias, white nigellas, pink astilbe, white cow parsley, peach hypericums, astranthia and many other luxury and seasonal foliages. A favourite of many of our own florists, this bouquet is simply a stunner, with textures that interlink and combine together for an altogether sublime combination",
+    	"image_url": "https://alice-shop-image.s3.amazonaws.com/images/bury.jpg",
+    	"price": 500000,
+    	"sale": 0
+    },
+    {
+		"name":  "PENNY LANE",
+    	"des": "Penny Lane, another stupendous edition to the luxury bouquets by Ivvo. Using only the finest stems of the longest ‘Red Naomi’ roses available, a wonder to behold has truly been created. One needs not say much about this bouquet only that it is worth giving to only to those you love the most. With additional trailing ivy foliages, we simply cannot think of a better way to say ‘I Love You’",
+    	"image_url": "https://alice-shop-image.s3.amazonaws.com/images/penny.jpg",
+    	"price": 700000,
+    	"sale": 30
+    }  
+]

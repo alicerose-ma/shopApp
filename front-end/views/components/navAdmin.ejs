@@ -1,0 +1,47 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light " style="background-color: white; height: 75px;">
+    <div class="container">
+        <a style="margin-left: 10px;" class="navbar-brand" href="/">
+            <img src="/image/logo.png" width="60px" height="60px" alt="Logo">
+            FLORAQUEEN
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
+            <div id="buttonHeader"></div>
+        </div>
+    </div>
+</nav>
+
+<script>
+    $(document).ready(function() {
+        const adminHaveSignin = isAdminSignin();
+        if (adminHaveSignin) {
+            var html = `
+                <button id = "adminSignout" class="btn btn-outline-success my-2 my-sm-0" style="margin-left: 30px;">Sign out</button>
+                <a class="my-2 my-sm-0" href="/admin">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" style="margin-left: 20px;">Admin Dashboard</button>    
+                </a>
+                <a class="my-2 my-sm-0" href="/">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" style="margin-left: 20px;">Homepage</button>    
+                </a>
+                `;
+            $('#buttonHeader').html(html);
+        }
+        else {
+            var html = `
+                <a class="my-2 my-sm-0" href="/admin/signin">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" style="margin-left: 20px;">Sign in</button>    
+                </a>
+                <a class="my-2 my-sm-0" href="/">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" style="margin-left: 20px;">Homepage</button>    
+                </a>
+                `;
+            $('#buttonHeader').html(html);
+        }
+        $("#adminSignout").click(function() {
+            adminSignout();
+        })
+    })
+</script>
